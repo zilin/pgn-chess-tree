@@ -54,7 +54,7 @@ Edit `package.json` to set your details:
 
 ```json
 {
-  "name": "pgn-chess-tree",
+  "name": "pgn-chess",
   "version": "1.0.0",
   "description": "Python-chess compatible game tree API for PGN parsing",
   "author": "Zilin Du <zilin.du@gmail.com>",
@@ -73,16 +73,16 @@ Edit `package.json` to set your details:
 ### 2. Check Package Name Availability
 
 ```bash
-npm search pgn-chess-tree
+npm search pgn-chess
 # or
-npm view pgn-chess-tree
+npm view pgn-chess
 # Should return 404 if name is available
 ```
 
 If the name is taken, choose a different name or use a scoped package:
 ```json
 {
-  "name": "@zilin/pgn-chess-tree"
+  "name": "pgn-chess"
 }
 ```
 
@@ -151,10 +151,10 @@ npm pack
 cd /tmp
 mkdir test-install && cd test-install
 npm init -y
-npm install /path/to/pgn-chess-tree-1.0.0.tgz
+npm install /path/to/pgn-chess-1.0.0.tgz
 
 # Test it works
-node -e "const { readGame } = require('pgn-chess-tree'); console.log(typeof readGame);"
+node -e "const { readGame } = require('pgn-chess'); console.log(typeof readGame);"
 # Should print: function
 ```
 
