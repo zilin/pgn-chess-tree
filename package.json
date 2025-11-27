@@ -1,0 +1,55 @@
+{
+  "name": "@zilin/pgn-chess-tree",
+  "version": "1.0.0",
+  "description": "Python-chess compatible game tree API for PGN parsing - built on top of @mliebelt/pgn-parser",
+  "author": "Zilin Du <zilin.du@gmail.com>",
+  "license": "MIT",
+  "keywords": [
+    "chess",
+    "pgn",
+    "parser",
+    "game-tree",
+    "python-chess",
+    "variations"
+  ],
+  "main": "lib/index.js",
+  "module": "lib/index.mjs",
+  "types": "lib/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./lib/index.mjs",
+      "require": "./lib/index.js",
+      "types": "./lib/index.d.ts"
+    }
+  },
+  "files": [
+    "lib",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "clean": "rm -rf lib",
+    "build:esm": "tsc -p tsconfig.esm.json",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build": "npm run clean && npm run build:esm && npm run build:cjs",
+    "test": "uvu -r tsm test",
+    "generate-refs": "python3 test/scripts/generate-reference.py",
+    "prepublishOnly": "npm run build && npm test"
+  },
+  "dependencies": {
+    "@mliebelt/pgn-parser": "^1.4.0"
+  },
+  "devDependencies": {
+    "@mliebelt/pgn-types": "^1.0.4",
+    "tsm": "^2.3.0",
+    "typescript": "^5.0.0",
+    "uvu": "^0.5.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zilin/pgn-chess-tree.git"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

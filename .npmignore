@@ -1,0 +1,17 @@
+# Source files (use lib/)
+src/
+
+# Tests
+test/
+
+# TypeScript config
+tsconfig*.json
+
+# Development files
+.gitignore
+.editorconfig
+
+# IDE
+.idea/
+.vscode/
+
