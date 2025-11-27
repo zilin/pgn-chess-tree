@@ -1,6 +1,6 @@
 {
   "name": "pgn-chess",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Python-chess compatible game tree API for PGN parsing - built on top of @mliebelt/pgn-parser",
   "author": "Zilin Du <zilin.du@gmail.com>",
   "license": "MIT",
