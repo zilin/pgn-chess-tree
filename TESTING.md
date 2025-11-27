@@ -1,6 +1,6 @@
-# Testing Guide: pgn-chess-tree
+# Testing Guide: pgn-chess
 
-This guide explains how to test `pgn-chess-tree` against `python-chess` to ensure compatibility.
+This guide explains how to test `pgn-chess` against `python-chess` to ensure compatibility.
 
 ---
 
@@ -18,10 +18,10 @@ This guide explains how to test `pgn-chess-tree` against `python-chess` to ensur
 
 ## Overview
 
-The test suite verifies that `pgn-chess-tree` produces the exact same tree structure as `python-chess`. This is done by:
+The test suite verifies that `pgn-chess` produces the exact same tree structure as `python-chess`. This is done by:
 
 1. **Generate**: Parse PGN files with python-chess and export trees as JSON
-2. **Parse**: Parse the same PGN files with pgn-chess-tree  
+2. **Parse**: Parse the same PGN files with pgn-chess  
 3. **Compare**: Verify the structures match
 
 ### Test Files
@@ -84,7 +84,7 @@ pip3 install chess
 Place your PGN files in the `pgns/` directory at the project root.
 
 ```
-pgn-chess-tree/
+pgn-chess/
 ├── pgns/                    <-- Put PGN files here
 │   ├── game1.pgn
 │   ├── game2.pgn
@@ -106,7 +106,7 @@ python3 test/scripts/generate-reference.py
 **Expected Output:**
 ```
 Found 23 PGN files
-Output directory: /path/to/pgn-chess-tree/test/reference-trees
+Output directory: /path/to/pgn-chess/test/reference-trees
 
 Processing: game1.pgn
   -> Generated game1.json (1 games)
@@ -254,7 +254,7 @@ npm test
 ### Testing a Specific PGN Interactively
 
 ```typescript
-import { readGame } from 'pgn-chess-tree';
+import { readGame } from 'pgn-chess';
 import * as fs from 'fs';
 
 const pgn = fs.readFileSync('path/to/game.pgn', 'utf-8');
@@ -359,7 +359,7 @@ python3 test/scripts/generate-reference.py
 ### Directory Structure
 
 ```
-pgn-chess-tree/
+pgn-chess/
 ├── pgns/                           # PGN source files
 │   ├── game1.pgn
 │   ├── game2.pgn

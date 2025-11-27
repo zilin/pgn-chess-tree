@@ -1,6 +1,6 @@
-# Implementation Reference: pgn-chess-tree
+# Implementation Reference: pgn-chess
 
-**Package:** `pgn-chess-tree`  
+**Package:** `pgn-chess`  
 **Purpose:** Python-chess compatible game tree API for PGN parsing  
 **Built on:** `@mliebelt/pgn-parser`
 
@@ -14,7 +14,7 @@
 5. [How It Works](#how-it-works)
 6. [Test Infrastructure](#test-infrastructure)
 7. [File Structure](#file-structure)
-8. [python-chess Comparison](#comparison-python-chess-vs-pgn-chess-tree)
+8. [python-chess Comparison](#comparison-python-chess-vs-pgn-chess)
 
 ---
 
@@ -29,7 +29,7 @@ This package provides a python-chess compatible API for parsing PGN files into g
 
 ### Key Differences from pgn-parser
 
-| pgn-parser | pgn-chess-tree |
+| pgn-parser | pgn-chess |
 |------------|----------------|
 | Flat `PgnMove[]` array | Tree of `GameNode` objects |
 | Variations as `variations: PgnMove[][]` | Variations as `node.variations: GameNode[]` |
@@ -43,7 +43,7 @@ This package provides a python-chess compatible API for parsing PGN files into g
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
-│                      pgn-chess-tree                              │
+│                      pgn-chess                              │
 ├─────────────────────────────────────────────────────────────────┤
 │  readGame(pgn) / readGames(pgn)                                 │
 │       │                                                          │
@@ -231,7 +231,7 @@ const NAG_BLUNDER = 4;          // ??
 ### Reading Games
 
 ```typescript
-import { readGame, readGames } from 'pgn-chess-tree';
+import { readGame, readGames } from 'pgn-chess';
 
 // Read single game
 const game = readGame(pgnString);
@@ -420,7 +420,7 @@ class GameNode {
 
 ## Test Infrastructure
 
-The test suite verifies that `pgn-chess-tree` produces the exact same tree structure as `python-chess`.
+The test suite verifies that `pgn-chess` produces the exact same tree structure as `python-chess`.
 
 ### Test Files
 
@@ -450,7 +450,7 @@ See **[TESTING.md](./TESTING.md)** for complete instructions on:
 ## File Structure
 
 ```
-pgn-chess-tree/
+pgn-chess/
 ├── package.json
 ├── README.md
 ├── IMPLEMENTATION.md         # This file
@@ -488,9 +488,9 @@ pgn-chess-tree/
 
 ---
 
-## Comparison: python-chess vs pgn-chess-tree
+## Comparison: python-chess vs pgn-chess
 
-| python-chess | pgn-chess-tree |
+| python-chess | pgn-chess |
 |--------------|----------------|
 | `chess.pgn.read_game(file)` | `readGame(string)` |
 | `game.headers["White"]` | `game.headers.get("White")` |

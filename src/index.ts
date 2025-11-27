@@ -1,12 +1,12 @@
 /**
- * pgn-chess-tree
+ * pgn-chess
  * 
  * Python-chess compatible game tree API for PGN parsing.
  * Built on top of @mliebelt/pgn-parser.
  * 
  * @example
  * ```typescript
- * import { readGame, readGames } from 'pgn-chess-tree';
+ * import { readGame, readGames } from 'pgn-chess';
  * 
  * // Read a single game
  * const game = readGame(pgnString);

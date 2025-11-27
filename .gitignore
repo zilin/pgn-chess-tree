@@ -29,3 +29,6 @@ venv/
 pgns/
 test/reference-trees/
 
+# npm pack artifacts
+*.tgz
+

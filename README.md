@@ -1,4 +1,4 @@
-# pgn-chess-tree
+# pgn-chess
 
 Python-chess compatible game tree API for PGN parsing. Built on top of [@mliebelt/pgn-parser](https://github.com/mliebelt/pgn-parser).
 
@@ -13,20 +13,20 @@ Python-chess compatible game tree API for PGN parsing. Built on top of [@mliebel
 ## Installation
 
 ```bash
-npm install pgn-chess-tree
+npm install pgn-chess
 ```
 
 ## Quick Start
 
 ```typescript
-import { readGame, readGames } from 'pgn-chess-tree';
+import { readGame, readGames } from 'pgn-chess';
 
 // Read a single game
 const game = readGame(`
   [Event "Example"]
   [White "Player1"]
   [Black "Player2"]
-  
+
   1. e4 e5 (1... c5 2. Nf3) 2. Nf3 Nc6 3. Bb5 *
 `);
 
@@ -148,7 +148,7 @@ node.promoteToMain()         // Make this the mainline
 Full chess board with move generation and validation.
 
 ```typescript
-import { Board, Move } from 'pgn-chess-tree';
+import { Board, Move } from 'pgn-chess';
 
 const board = new Board();           // Starting position
 const board2 = new Board(fenString); // From FEN
@@ -177,7 +177,7 @@ board.parseSan("Nf3")           // Parse SAN to Move
 ### Move Class
 
 ```typescript
-import { Move } from 'pgn-chess-tree';
+import { Move } from 'pgn-chess';
 
 // Create moves
 const move = Move.fromUci("e2e4");
@@ -195,7 +195,7 @@ move.equals(other)  // Compare moves
 
 This library provides an API that closely matches python-chess:
 
-| python-chess | pgn-chess-tree |
+| python-chess | pgn-chess |
 |-------------|----------------|
 | `chess.pgn.read_game(file)` | `readGame(string)` |
 | `game.headers["White"]` | `game.headers.get("White")` |
@@ -210,4 +210,3 @@ This library provides an API that closely matches python-chess:
 ## License
 
 MIT
-

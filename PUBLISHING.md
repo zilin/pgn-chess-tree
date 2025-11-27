@@ -1,6 +1,6 @@
-# Publishing Guide: pgn-chess-tree
+# Publishing Guide: pgn-chess
 
-This guide explains how to publish `pgn-chess-tree` to npm.
+This guide explains how to publish `pgn-chess` to npm.
 
 ---
 
@@ -61,12 +61,12 @@ Edit `package.json` to set your details:
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zilin/pgn-chess-tree.git"
+    "url": "https://github.com/zilin/pgn-chess.git"
   },
   "bugs": {
-    "url": "https://github.com/zilin/pgn-chess-tree/issues"
+    "url": "https://github.com/zilin/pgn-chess/issues"
   },
-  "homepage": "https://github.com/zilin/pgn-chess-tree#readme"
+  "homepage": "https://github.com/zilin/pgn-chess#readme"
 }
 ```
 
@@ -173,7 +173,7 @@ npm test
 npm publish
 ```
 
-For scoped packages (`@username/pgn-chess-tree`), add `--access public`:
+For scoped packages (`@username/pgn-chess`), add `--access public`:
 ```bash
 npm publish --access public
 ```
@@ -182,10 +182,10 @@ npm publish --access public
 
 ```bash
 # Check on npm
-npm view pgn-chess-tree
+npm view pgn-chess
 
 # Or visit
-# https://www.npmjs.com/package/pgn-chess-tree
+# https://www.npmjs.com/package/pgn-chess
 ```
 
 ---
@@ -269,7 +269,7 @@ npm version prerelease --preid=beta
 npm publish --tag beta
 
 # Users install with:
-# npm install pgn-chess-tree@beta
+# npm install pgn-chess@beta
 ```
 
 ### Publishing from CI/CD
@@ -299,7 +299,7 @@ npm login
 Choose a different name or use scoped package:
 ```json
 {
-  "name": "@your-username/pgn-chess-tree"
+  "name": "@your-username/pgn-chess"
 }
 ```
 
@@ -354,7 +354,7 @@ npm link
 
 # In a test project
 cd /path/to/test-project
-npm link pgn-chess-tree
+npm link pgn-chess
 
 # Now you can import and test
 ```
@@ -396,22 +396,22 @@ git push --tags
 npm whoami
 
 # View package info
-npm view pgn-chess-tree
+npm view pgn-chess
 
 # See all versions
-npm view pgn-chess-tree versions
+npm view pgn-chess versions
 
 # Unpublish (within 72 hours only!)
-npm unpublish pgn-chess-tree@1.0.0
+npm unpublish pgn-chess@1.0.0
 
 # Deprecate a version
-npm deprecate pgn-chess-tree@1.0.0 "Use 1.0.1 instead"
+npm deprecate pgn-chess@1.0.0 "Use 1.0.1 instead"
 ```
 
 ### Package Files
 
 ```
-pgn-chess-tree/
+pgn-chess/
 ├── package.json      # Package metadata (published)
 ├── README.md         # Documentation (published)
 ├── lib/              # Built JavaScript (published)
